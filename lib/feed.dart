@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:instagram_1/pages/make_post.dart';
 import 'package:instagram_1/post.dart';
 
 class Feed extends StatefulWidget {
@@ -7,6 +8,12 @@ class Feed extends StatefulWidget {
 
 class _FeedState extends State<Feed> {
   List<Post> feedData;
+
+  void _makePost() {
+    // TODO: a list of users which have liked this post
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => Scaffold(body: MakePost())));
+  }
 
   @override
   void initState() {
@@ -32,9 +39,7 @@ class _FeedState extends State<Feed> {
       body: RefreshIndicator(child: buildFeed(), onRefresh: _refresh),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          debugPrint("[IMPLMNT] Add new Post");
-        },
+        onPressed: _makePost,
         tooltip: 'New Post',
         child: Icon(Icons.add),
         elevation: 2.0,

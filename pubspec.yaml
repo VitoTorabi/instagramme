@@ -15,8 +15,9 @@ environment:
 dependencies:
   intl: ^0.15.7
   shared_preferences: ^0.4.3
-  image_picker: ^0.4.12+1
+  path_provider: any
   sqflite: any
+  image_picker: ^0.4.12+1
   flutter:
     sdk: flutter
 

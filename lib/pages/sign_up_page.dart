@@ -45,6 +45,17 @@ class _SignUpPageState extends State<SignUpPage> {
 			),
 		);
 
+		final fullname = TextFormField(
+			//keyboardType: TextInputType.emailAddress,
+			autofocus: false,
+			controller: usernameController,
+			decoration: InputDecoration(
+				hintText: 'fullname',
+				contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+				border: OutlineInputBorder(borderRadius: BorderRadius.circular(32.0)),
+			),
+		);
+
 		final password = TextFormField(
 			autofocus: false,
 			controller: passwordController,
@@ -94,6 +105,8 @@ class _SignUpPageState extends State<SignUpPage> {
 						avatar,
 						SizedBox(height: 40.0),
 						username,
+						SizedBox(height: 8.0),
+						fullname,
 						SizedBox(height: 8.0),
 						password,
 						SizedBox(height: 8.0),
